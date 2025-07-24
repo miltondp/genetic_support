@@ -21,6 +21,8 @@ Create the environment for this project:
 
 ### Option 2: `conda-lock`
 
+Only available for `linux-64` and `osx-64`.
+
 1. Install [`pipx`](https://github.com/pypa/pipx).
 
 1. Install `conda-lock` using `pipx`:
