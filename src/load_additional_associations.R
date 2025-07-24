@@ -135,6 +135,20 @@ load_additional_associations <- function(additional_file,
   # Ensure additional data has same column order and types
   additional_assoc <- additional_assoc[existing_cols]
   
+  # Fix data types to match existing data
+  for (col in colnames(existing_assoc)) {
+    if (col %in% colnames(additional_assoc)) {
+      existing_type <- class(existing_assoc[[col]])[1]
+      if (existing_type == "numeric" && !is.numeric(additional_assoc[[col]])) {
+        additional_assoc[[col]] <- as.numeric(additional_assoc[[col]])
+      } else if (existing_type == "integer" && !is.integer(additional_assoc[[col]])) {
+        additional_assoc[[col]] <- as.integer(additional_assoc[[col]])
+      } else if (existing_type == "character" && !is.character(additional_assoc[[col]])) {
+        additional_assoc[[col]] <- as.character(additional_assoc[[col]])
+      }
+    }
+  }
+  
   # Add arow column (unique identifier)
   max_arow <- max(existing_assoc$arow, na.rm = TRUE)
   additional_assoc$arow <- seq(max_arow + 1, max_arow + nrow(additional_assoc))
