@@ -8,6 +8,19 @@ This repository holds the data and source code for the following manuscript:
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda.
 
+Now follow one of the following options.
+
+### Option 1: Conda
+
+Create the environment for this project:
+
+   ```bash
+   conda env create -f environment.yml
+   conda activate gensup
+   ```
+
+### Option 2: `conda-lock`
+
 1. Install [`pipx`](https://github.com/pypa/pipx).
 
 1. Install `conda-lock` using `pipx`:
@@ -20,16 +33,10 @@ This repository holds the data and source code for the following manuscript:
 
    ```bash
    # create conda environment
-   conda-lock install --name pvae conda-lock.yml
+   conda-lock install --name gensup conda-lock.yml
 
    # activate environment
-   conda activate pvae
-
-   # install R packages
-   bash setup/install.sh -g r
-
-   # install local package
-   pip install -e .
+   conda activate gensup
    ```
 
 ## Run the analyses
