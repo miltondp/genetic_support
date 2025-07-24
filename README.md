@@ -10,7 +10,11 @@ This repository holds the data and source code for the following manuscript:
 
 Now follow one of the following options.
 
-### Option 1: Conda
+### Step 1: install Conda environment
+
+Here you can use two options below.
+
+#### Option 1: Conda
 
 Create the environment for this project:
 
@@ -19,7 +23,7 @@ Create the environment for this project:
    conda activate gensup
    ```
 
-### Option 2: `conda-lock`
+#### Option 2: `conda-lock`
 
 Only available for `linux-64` and `osx-64`.
 
@@ -40,6 +44,14 @@ Only available for `linux-64` and `osx-64`.
    # activate environment
    conda activate gensup
    ```
+
+### Step 2: install R packages
+
+Some R packages are not available in conda. Open `R` and install them:
+
+```R
+install.packages("lawstat")
+```
 
 ## Run the analyses
 Here, you can:
