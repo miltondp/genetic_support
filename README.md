@@ -50,7 +50,8 @@ Only available for `linux-64` and `osx-64`.
 Some R packages are not available in conda. Open `R` and install them:
 
 ```R
-install.packages("lawstat")
+require(remotes)
+install_version("lawstat", version = "3.4", upgrade="never", repos = "http://cran.us.r-project.org")
 ```
 
 ## Run the analyses
