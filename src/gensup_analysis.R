@@ -1,3 +1,16 @@
+#!/usr/bin/env Rscript
+
+# Genetic Support Analysis
+# 
+# This script analyzes the impact of genetic evidence on clinical success.
+# 
+# To add new sources of gene-trait associations:
+# 1. Use src/load_additional_associations.R to add new associations to data/assoc.tsv.gz
+# 2. The pipeline_best() function accepts an 'associations' parameter to specify sources
+# 3. Example: pipeline_best(merge2, associations=c('OMIM','OTG','YourNewSource'))
+# 
+# For detailed instructions, see ADD_NEW_ASSOCIATIONS.md
+
 overall_start_time = Sys.time()
 cat(file=stderr(), 'Loading dependencies...')
 
